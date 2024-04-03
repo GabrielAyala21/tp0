@@ -73,10 +73,30 @@ header {
 }
 
 #banner {
+    
     height: 200px;
     width: var(--ancho100);
     background-color: #41479c;
+  position: relative;
+  
+}
+.imgbanner{
+    width: 100%;
+    height: 100%;
 
+}
+& img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+.texto{
+    position: sticky;
+    top: 0;
+    left: 50%;
+    background-color: rgb(174,29,29);
+    padding: 5px;
 }
 
 #descrip {
