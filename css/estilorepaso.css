@@ -1,0 +1,147 @@
+* {
+    padding: 0%;
+    /*adentro*/
+    margin: 0%;
+    /*afuera*/
+}
+
+
+#contenedor {
+    min-height: 100vh;
+
+    width: 100%;
+    background-color: #5989b1;
+    font-family: "Poppins", sans-serif;
+    padding: 5px;
+}
+
+header {
+    height: 200px;
+    width: 100%;
+    background-color: rgb(104, 199, 128);
+    display: flex;
+    /*flexbox*/
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+
+
+
+
+
+
+
+
+    & .logo {
+        height: 30px;
+        width: 100px;
+        background-color: #0e9e9e;
+        display: flex;
+        align-items: center;
+        justify-content: space-around; 
+
+        & span:first-child{
+            font-size: 20pt;
+        }
+        & span:nth-child(2){
+            color: #fff;
+        }
+    }
+
+    & .botonera {
+
+        height: 30px;
+        
+        var(--colorprimario);
+    & a{text-decoration: none;
+        font-size: 16pt; 
+        padding: 5px 60px;
+        background-color: #0e9e9e;
+        border-radius: 6px;  
+    
+    }
+
+
+
+    & a:hover{
+        box-shadow: -0px 0px 15px -5px black;
+    }
+    }
+
+
+}
+
+#banner {
+    height: 200px;
+    width: var(--ancho100);
+    background-color: #41479c;
+
+}
+
+#descrip {
+    height: 150px;
+    width: 100%;
+    background-color: rgb(50, 143, 180);
+}
+
+footer {
+    height: 50px;
+    width: 100%;
+    background-color: #a30489;
+
+}
+
+#nosotros {
+    height: 150px;
+    width: 100%;
+    background-color: rgb(17, 173, 121);
+}
+
+#articulos {
+    height: 300px;
+    width: 100%;
+    background-color: rgb(84, 140, 192);
+}
+
+
+:root {
+    --ancho80: 80%;
+    --ancho100: 100%;
+    --colorprimario: #888;
+
+}
+
+/*-------------ordenamiento------------------------*/
+.dflex{
+    display: flex;
+
+}
+.centrar{
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+/*-------------fin ordenamiento------------------------*/
+
+main {
+    width: var(--ancho80);
+    margin: auto;
+
+}
+
+
+
+
+
+
+
+#img {
+    height: 100vh;
+}
