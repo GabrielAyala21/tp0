@@ -27,7 +27,7 @@ body {
             height: 340px;
             width: 280px;
             background-color: antiquewhite;
-            background-image: url(.vscode/living.png);
+            background-image: url(vscodeliving.png);
             border-radius: 14px 14px 0 0;
             display: grid;
             background-position: center;
