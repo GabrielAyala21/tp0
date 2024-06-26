@@ -1,182 +1,233 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/estilorepaso.css">
+    <title>Examen Práctico de JavaScript DOM</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        /*-----------------*/
+        .rojo {
+            background-color: rgb(255, 0, 0);
+        }
+        
+        .azul {
+            background-color: blue;
+        }
+        
+        .negro {
+            background-color: black;
+        }
+        
+        .blanco {
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .verde {
+            background-color: rgb(0, 151, 58);
+        }
+        
+        /*-----------------*/
+        
+        
+        body {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(0deg, rgb(6, 67, 148), rgb(4, 138, 138));
+            display: grid;
+            place-items: center;
+            /*para centrar solo un elemento*/
+        }
+        
+
+
+        .box {
+            width: 500px;
+            height: 80%;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 15px -3px black;
+            /*para hacer sombras*/
+            border-radius: 14px;
+            /*para redodear los bordes*/
+            overflow: hidden;
+            padding: 10px;
+        
+        
+
+        .ventana {
+            padding-top: 20px;
+            height: 100%;
+            width: 60%;
+            margin: auto;
+        }
+
+        p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .botonera {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        
+            button {
+                padding: 0 20px;
+                height: 2rem;
+                border-radius: 1rem;
+                font-size: 1.1rem;
+                border: 0;
+                cursor: pointer;
+                color: rgb(187, 167, 167);
+            }
+        
+            bottom:hover {
+                background-color: lightgray;
+                color: black;
+            }
+        
+            background:active {
+                box-shadow: 0 0 15px -3px rgb(0, 0, 0, 0.5);
+            }
+        }
+        
+.hola{
+    color: #000000;
+    background-color: rgb(1, 173, 145);
+    
+}
+
+
+
+
+
+
+
+        input[type=text], button{
+            padding: 5px;
+        }
+        button{cursor: pointer;}
+        .btngroup{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+        @media (orientation:portrait){
+            .ventana{
+                width: 100%;
+            }   
+        }
+    </style>
 </head>
 
 <body>
-    <div id="contenedor">
-        <header>
-            <div class=logo>
-                <span>♥</span>
-                <span>PDISC</span>
-            </div>
+    <div class="box">
+
+   <div class="hola">
+    <h1>Examen Práctico de JavaScript DOM</h1>
+    <h2>Gabriel Ayala,7°3</h2>
+    <div class="ventana">
+        <h3>Lista de compras</h3>
+        <div class="grupo">
+            <input type="text" id="nuevoValor" placeholder="Ingrese un nuevo valor">
+           </div>
+
 
             <div class="botonera">
-                <a href="https://www.youtube.com/watch?v=BEwzyezot3s">♥</a>
-                <a href="https://www.youtube.com/watch?v=RP7Wj9NpgAE">♥</a>
-                <a href="https://www.youtube.com/watch?v=uYSqjUuOBmY">♥</a>
+                <button id="add-paragraph" onclick="Agregar()">Agregar Item</button>
+                <button id="highlight">Resaltar Items</button>
+                <button id="hide-content">Ocultar Lista</button>
+                <button id="show-content" class="hidden">Mostrar Lista</button>
             </div>
-
-        </header>
-        <main>
-            <section id="banner">
-                <div class="imagen-fond">
-                    <img src="css/img/c1.jpg" alt="" srcset="">
-                </div>
-                <div class="texto">
-                    <h1>MESSI</h1> <!--h1 para titulo -->
-                    <h4>y la copa</h4>
-                </div>
-
-
-            </section>
-            <section id="descript" class="deflex centrar">
-
-                <div class="ancho50 parrafo positionrel">
-                    <h3>PATOS ARGENTINOS</h3>
-
-                    <div class="parrafito positionabs">
-                        <div class="positionrel">
-                            <span>"</span>
-                            <span>"</span>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolorum nostrum neque
-                                ducimus
-                                sapiente exercitationem saepe tempora obcaecati? Molestias necessitatibus porro autem,
-                                quas
-                                adipisci reprehenderit distinctio ea dolores labore quos?</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ancho50">
-
-                    <img class="imagen" src="css/img/pato.jpg" alt="">
-
-                </div>
-
-            </section>
-            <section id="articulos">
-                <article class="producto">
-                    <img src="css/img/m2.gif"   alt="" class="img_prod">
-
-                    <div class="deflex columna separar h50">
-                        <div>
-                            <h3>buzo verde</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adite iste quisquam, voluptatem corporis aut
-                                deleniti
-                                quis fugiat! Eaque, aut ipsa.</p>
-
-                        </div>
-                    </div>
-
-
-                    <button type="submit" class="btn">ver mas</button>
-                </article>
-
-                <article class="producto">
-                    <img src="css/img/m3.gif" alt="" class="img_prod">
-
-                    <div class="deflex columna separar h50">
-                        <div>
-                            <h3>buzo verde</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adite iste quisquam, voluptatem corporis aut
-                                deleniti
-                                quis fugiat! Eaque, aut ipsa.</p>
-
-                        </div>
-                    </div>
-
-
-                    <button type="submit" class="btn">ver mas</button>
-                </article>
-                <article class="producto">
-                    <img src="css/img/m4.gif" alt="" class="img_prod">
-
-                    <div class="deflex columna separar h50">
-                        <div>
-                            <h3>buzo verde</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adite iste quisquam, voluptatem corporis aut
-                                deleniti
-                                quis fugiat! Eaque, aut ipsa.</p>
-
-                        </div>
-                    </div>
-
-
-                    <button type="submit" class="btn">ver mas</button>
-                </article>
-                <article class="producto">
-                    <img src="css/img/m5.gif" alt="" class="img_prod">
-
-                    <div class="deflex columna separar h50">
-                        <div>
-                            <h3>buzo verde</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adite iste quisquam, voluptatem corporis aut
-                                deleniti
-                                quis fugiat! Eaque, aut ipsa.</p>
-
-                        </div>
-                    </div>
-
-
-                    <button type="submit" class="btn">ver mas</button>
-                </article>
-
-
-            </section>
-           
-            <section id="nosotros">
-                
-                <article class="staff">
-                    <!-- este es el contenedor con forma de circulo -->
-                    <div class="foto-redonda">
-                        <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="">
-                    </div>
-                    <h1>Un random</h1>
-                    <h4>Python Developer</h4>
-                    <p>Chism expert, matero developer, tranfugueishon of information</p>
-                   
-                   </article>
-                   <article class="staff">
-                    <!-- este es el contenedor con forma de circulo -->
-                    <div class="foto-redonda">
-                        <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="">
-                    </div>
-                    <h1>Otro random</h1>
-                    <h4>Python Developer</h4>
-                    <p>Chism expert, matero developer, tranfugueishon of information</p>
-                   
-                   </article>
-                   <article class="staff">
-                    <!-- este es el contenedor con forma de circulo -->
-                    <div class="foto-redonda">
-                        <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="">
-                    </div>
-                    <h1>Random numero 3</h1>
-                    <h4>Python Developer</h4>
-                    <p>Chism expert, matero developer, tranfugueishon of information</p>
-                   
-                   </article>
-
-            </section>
-
-            <div class="color"></div>
-            <div class="color"></div>
-            <div class="color"></div>
-        </main>
-        
-        <footer>  Gabriel Ayala - 2024 - 7°3 - G1</footer>
-
+        </div>
+        <hr>
+        <div id="content">
+            <p>Desengrasante 500ml.</p>
+            <hr>
+        </div>
     </div>
+    <div class="desc_prod">
+    <script>
+       // Tarea 1: Agregar ITEM DE LISTA
+function agregarParrafo() {
+    // Obtener el valor del input
+    var nuevoValor = document.getElementById("nuevoValor").value;
+    
+    // Crear un nuevo párrafo
+    var nuevoParrafo = document.createElement("p");
+    nuevoParrafo.textContent = nuevoValor;
+    
+    // Agregar el nuevo párrafo al div con id "content"
+    var contentDiv = document.getElementById("content");
+    contentDiv.appendChild(nuevoParrafo);
+    
+    // Limpiar el valor del input
+    document.getElementById("nuevoValor").value = "";
+}
+
+// Tarea 2: Resaltar Párrafos
+function resaltarParrafos() {
+    // Obtener todos los párrafos dentro de #content
+    var parrafos = document.getElementById("content").getElementsByTagName("p");
+    
+    // Iterar sobre los párrafos y agregar la clase "highlight"
+    for (var i = 0; i < parrafos.length; i++) {
+        parrafos[i].classList.add("highlight");
+    }
+}
+
+// Tarea 3: Ocultar Contenido
+function ocultarContenido() {
+    // Ocultar el div con id "content"
+    var contentDiv = document.getElementById("content");
+    contentDiv.classList.add("hidden");
+    
+    // Mostrar el botón con id "show-content"
+    var showButton = document.getElementById("show-content");
+    showButton.classList.remove("hidden");
+}
+
+// Tarea 4: Mostrar Contenido
+function mostrarContenido() {
+    // Mostrar el div con id "content"
+    var contentDiv = document.getElementById("content");
+    contentDiv.classList.remove("hidden");
+    
+    // Ocultar el botón con id "show-content"
+    var showButton = document.getElementById("show-content");
+    showButton.classList.add("hidden");
+}
+
+// Asignar eventos a los botones
+document.getElementById("add-paragraph").addEventListener("click", agregarParrafo);
+document.getElementById("highlight").addEventListener("click", resaltarParrafos);
+document.getElementById("hide-content").addEventListener("click", ocultarContenido);
+document.getElementById("show-content").addEventListener("click", mostrarContenido);
 
 
+    </script></div>
+</div>
 </body>
 
 </html>
